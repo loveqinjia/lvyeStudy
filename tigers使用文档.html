@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			h1{	
+				text-align: center;
+				color:red;
+				font-size:60px;
+				
+			}
+			h2{
+				text-align: center;
+				
+			}
+		tr {
+	font-size: 14px;
+}
+        tr {
+	font-size: 24px;
+}
+        </style>
+	</head>
+<body>
+		
+		<h1>tigers</h1>
+		
+		<h2>tigers微框架使用文档</h2>
+<p>&nbsp;</p>
+		<table width="1700" border="1" align="center" cellpadding="0" cellspacing="0">
+		  <tr>
+		    <td width="185" height="60" align="center">方法</td>
+		    <td height="60" colspan="3" align="center">说明</td>
+		    <td width="139" height="60" align="center">返回值</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center"><strong>att主函数</strong></td>
+		    <td height="60" colspan="3">该函数作为选择器载入页面 框架本身任何方法都需要依靠他来实现 你可以利用它来进行选择 ID 类 还有标签 当然这里还有很多不方便 比如只能这样选 att('#id') att('.class') att('div') 这里面有诸多的不便 以我的水平 还只能这样 还有框架本身不能链式调用</td>
+		    <td width="139" align="center">object</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">css方法</td>
+		    <td height="60" colspan="3">正如大家见到的这个方法和jq里面的一样只不过 我支持了 多组元素取值att('div').css('left') 这个会返回一组数据 当然这个有时候可能不好用 但是 还是可以用 只不过看你能不能驾驭这&quot;高端&quot;的返回值</td>
+		    <td width="139" align="center">Array|Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">height方法</td>
+		    <td height="60" colspan="3">取出元素的height值 依然是支持多组元素 可以返回多组元素的值 设置的时候 可以填PX单位也可以不填 取值：att('div').height()  设置值：att('div').height('s')</td>
+		    <td width="139" align="center">Array|Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">width方法</td>
+		    <td height="60" colspan="3">取出元素的width值 依然是支持多组元素 可以返回多组元素的值 设置的时候 可以填PX单位也可以不填</td>
+		    <td width="139" align="center">Array|Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">left方法</td>
+		    <td height="60" colspan="3">取出元素的left值 依然是支持多组元素 可以返回多组元素的值 设置的时候 可以填PX单位也可以不填</td>
+		    <td width="139" align="center">Array|Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">top方法</td>
+		    <td height="60" colspan="3">取出元素的top值 依然是支持多组元素 可以返回多组元素的值 设置的时候 可以填PX单位也可以不填</td>
+		    <td width="139" align="center">Array|Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">html方法</td>
+		    <td height="60" colspan="3">可以取出元素的HTML值 返回多组数据或者一个字符串 可以直接添加HTML标签设置内容 att('div').html('&lt;b&gt;test!&lt;/b&gt;') 取值:att('div').html()</td>
+		    <td width="139" height="80" align="center">Array|String</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">text方法</td>
+		    <td height="60" colspan="3">取出元素的text值 不支持HTML标签的添加设置 att('div').text('a') 取值：att('div').text()</td>
+		    <td width="139" height="80" align="center">Array|String</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">val方法</td>
+		    <td height="60" colspan="3">取出元素的value值 同样可以进行设置 att('div').val('x') 取值：att('div').val()</td>
+		    <td width="139" height="80" align="center">Array|String</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">attr方法</td>
+		    <td height="60" colspan="3">设置元素的属性值 这里要区分开 元素的属性值并不是left top float那些 而是 id class value 这些 可以取值 设置值：att('div').attr('id','qinjia') 取值:att('div').attr('id')</td>
+		    <td width="139" height="80" align="center">Array|String</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">choose方法</td>
+		    <td height="60" colspan="3"> 选中第几个元素然后对这个元素进行操作 att('div').choose(4)</td>
+		    <td width="139" height="80" align="center">Number|Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">newElement方法</td>
+		    <td height="60" colspan="3">不建议使用</td>
+		    <td width="139" height="80" align="center">&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">El方法</td>
+		    <td height="60" colspan="3">返回所选元素 因为选择器不能返回选择的元素 这是我技术上的原因 att('div').El()</td>
+		    <td width="139" height="80" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">hide方法</td>
+		    <td height="60" colspan="3">将所选元素隐藏 att('div').hide()</td>
+		    <td width="139" height="80" align="center">undefined</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">show方法</td>
+		    <td height="60" colspan="3">将所选元素显示 att('div').show()</td>
+		    <td width="139" height="0" align="center">undefined</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">addClass方法</td>
+		    <td height="60" colspan="3"><p>为所选元素添加 class类样式 att('div').addClass('qinjia') 这是添加一个 如果添加多个则需要 att('div').addClass({<br>
+		      <br>
+		      key1:class1, 这里的 key可以随便写名字</p>
+		      <p>key2:class2,</p>
+		      <p>key3:class3 <br>
+		        <br>
+	        })</p></td>
+		    <td width="139" height="0" align="center">undefined</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">delClass方法</td>
+		    <td height="60" colspan="3">为所选元素删除样式 这里方法有BUG 不建议用 一是会删除全部样式 只有att(this).delClass('qinjia') 才会从指定元素中 删除样式</td>
+		    <td width="139" height="0" align="center">undefined</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">first方法</td>
+		    <td height="60" colspan="3">选中第一个所选元素 att('div').first()</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">last方法</td>
+		    <td height="60" colspan="3">选中最后一个元素 att('div').last()</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">less方法</td>
+		    <td height="60" colspan="3">选中小于索引值多少的元素 att('div').less(3)</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">more方法</td>
+		    <td height="60" colspan="3">选中大于索引值多少的元素 att('div').more(5)</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">even 方法</td>
+		    <td height="60" colspan="3">选中索引值为偶数的元素 att('div').even() 如果填写值那么 even将重新计算索引值 att('div').even(3) 标志着索引值从3开始选中</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">odd方法</td>
+		    <td height="60" colspan="3">选中索引值为奇数的元素 att('div').odd() 如果填写值那么odd将重新计算索引值 att('div').odd(6) 标志着索引值从6开始选中 事实上这两个函数运用好了的话完全可以当一个函数来用</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">animate方法</td>
+		    <td height="60" colspan="3"><p>这个动画函数只支持单一元素 多元素将按照元素的第一个来算 <br>
+		      att('#div1').animate({<br>
+		      left:600,</p>
+		      <p>opacity:40<br>
+		        <br>
+	        },callback) callback是回调函数可以不写</p></td>
+		    <td width="139" height="0" align="center">&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td height="60" rowspan="2" align="center">forEach方法</td>
+		    <td height="60" colspan="3" align="center" valign="middle">forEach方法<br></td>
+		    <td width="139" height="0" rowspan="2" align="center">Array|Number|String</td>
+	      </tr>
+		  <tr>
+		    <td width="435" height="60"><p>att('div').forEach(function(key,val){</p>
+		      <p><br>
+	          alert(key,val) 将返回元素的索引值和元素</p>
+		      <p><br>
+	        })</p></td>
+		    <td width="351" height="60" valign="top">att().forEach(arr,function(key,val){<br>
+		      <br>
+		      alert(key,val) 将返回数组的索引值和内容<br>
+		      <br>
+	        })</td>
+		    <td width="278" height="60">att().forEach(json,function(key,val){<br>
+              <br>
+alert(key,val) 将返回json的键和值<br>
+<br>
+})</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center"><p>isArr方法</p></td>
+		    <td height="60" colspan="3">判断是不是数组 att().isArr(obj)</td>
+		    <td width="139" height="75" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isFn方法</td>
+		    <td height="60" colspan="3">判断是不是函数 att().isFn(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isReg方法</td>
+		    <td height="60" colspan="3">判断是不是正则表达式 att().isReg(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isObj方法</td>
+		    <td height="60" colspan="3">判断是不是对象 att().isObj(obj) 这里可能有人会有疑问 Arr不也是对象吗？ 这还判断什么 放心 我这里的函数能清楚的分清他是不是 Array类 Object类亦或者是Function</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isStr方法</td>
+		    <td height="60" colspan="3">判断是不是字符串 att().isStr(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isNum方法</td>
+		    <td height="60" colspan="3">判断是不是数字 att().isNum(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isBlo方法</td>
+		    <td height="60" colspan="3">判断是不是布尔值 att().isBlo(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isUnde方法</td>
+		    <td height="60" colspan="3">判断是不是undefined att().isUnde(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isNull方法</td>
+		    <td height="60" colspan="3">判断是不是null att().isNull(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">isDate方法</td>
+		    <td height="60" colspan="3">判断是不是日期对象 att().isDate(obj)</td>
+		    <td width="139" height="0" align="center">true|false</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">sum方法</td>
+		    <td height="60" colspan="3">为数组求和 att().sum(arr)</td>
+		    <td width="139" height="0" align="center">Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">max方法</td>
+		    <td height="60" colspan="3">为数组取出最大值 att().max(arr)</td>
+		    <td width="139" height="0" align="center">Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">min方法</td>
+		    <td height="60" colspan="3">为数组取出最小值 att().min(arr)</td>
+		    <td width="139" height="0" align="center">Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">random方法</td>
+		    <td height="60" colspan="3">随即返回一个数组数据 att().random(arr)</td>
+		    <td width="139" height="0" align="center">str|num|blo|obj</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">common方法</td>
+		    <td height="60" colspan="3">取出几个数组中相同的数据 att().common(arr1,arr2,arr3,arr4,arr5)</td>
+		    <td width="139" height="0" align="center">str|num|blo|obj</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">avg方法</td>
+		    <td height="60" colspan="3">求出数组中的平均数 att().avg(arr)</td>
+		    <td width="139" height="0" align="center">Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">finNum方法</td>
+		    <td height="60" colspan="3">找出数组中的数字 att().finNum(arr)</td>
+		    <td width="139" height="0" align="center">Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">finStr方法</td>
+		    <td height="60" colspan="3">找出数组中的 字符串att().finStr(arr)</td>
+		    <td width="139" height="0" align="center">String</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">indexOf方法</td>
+		    <td height="60" colspan="3">找出数组中 某个元素的下标 att().indexOf(arr,val)</td>
+		    <td width="139" height="0" align="center">Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">removeVal方法</td>
+		    <td height="60" colspan="3">删除数组中的某个元素 att().removeVal(arr,val)</td>
+		    <td width="139" height="0" align="center">null</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">lessNum方法</td>
+		    <td height="60" colspan="3">选择数组中小于多少的数据 并返回一个新数组 att().lessNum(arr,10)</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">moreNum方法</td>
+		    <td height="60" colspan="3">选择数组中大于多少的数据 并返回一个新数组 att().moreNum(arr,35)</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">jsonLen方法</td>
+		    <td height="60" colspan="3"> 大家都知道json是没有length的 我这里提供了一个函数 计算json的length att().jsonLen(json)</td>
+		    <td width="139" height="0" align="center">Number</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">uneff方法</td>
+		    <td height="60" colspan="3">去掉数组中的无效值 例如undefined null； att().uneff(arr)</td>
+		    <td width="139" height="0" align="center"><p>Array</p></td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">unNum方法</td>
+		    <td height="60" colspan="3">去掉数组中的数字 和findStr差不多</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">unStr方法</td>
+		    <td height="60" colspan="3">去掉数组中的字符串 和findNum差不多</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">unique方法</td>
+		    <td height="60" colspan="3">去掉数组中重复数据 att().unique(arr)</td>
+		    <td width="139" height="0" align="center">Array</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">action方法</td>
+		    <td height="60" colspan="3">为元素绑定事件 att('div').action('click',function(){<br>
+		      alert(this)<br>
+	        })</td>
+		    <td width="139" height="0" align="center">null</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">hover方法</td>
+		    <td height="60" colspan="3">为元素提供类似jq的hover操作方式</td>
+		    <td width="139" height="0" align="center">null</td>
+	      </tr>
+		  <tr>
+		    <td height="60" align="center">setkillf方法</td>
+		    <td height="60" colspan="3">为元素提供获取焦点和失去焦点的一套动作</td>
+		    <td width="139" height="40" align="center">null</td>
+	      </tr>
+		  <tr>
+		    <td height="87" colspan="5" align="center">还有些事件我就不介绍了 和jq一样命名</td>
+	      </tr>
+    </table>
+<p>&nbsp;</p>
+
+		
+</body>
+</html>
